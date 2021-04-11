@@ -23,6 +23,8 @@ namespace RentalCarsRefactored.CarsCategory
             }
             
             double totalPrice = daysRented * basePrice;
+
+            RentalCars.RevenuePerCategory["Luxury"] += totalPrice * office.PriceMultiplier / 2;
             return totalPrice * office.PriceMultiplier;
         }
     }

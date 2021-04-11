@@ -27,6 +27,7 @@ namespace RentalCarsRefactored.CarsCategory
             if (customer.FrequentRenterPoints >= 5)
                 totalPrice *= 0.05;
 
+            RentalCars.RevenuePerCategory["Premium"] += totalPrice * office.PriceMultiplier / 2;
             return totalPrice * office.PriceMultiplier;
         }
     }

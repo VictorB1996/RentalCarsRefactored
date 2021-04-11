@@ -26,6 +26,8 @@ namespace RentalCarsRefactored.CarsCategory
 
             if (customer.FrequentRenterPoints >= 5)
                 totalPrice *= 0.05;
+
+            RentalCars.RevenuePerCategory["Regular"] += totalPrice * office.PriceMultiplier / 2;
             return totalPrice * office.PriceMultiplier;
         }
     }

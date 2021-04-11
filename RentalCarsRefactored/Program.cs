@@ -15,16 +15,18 @@ namespace RentalCarsRefactored
             var customer3 = new Customer("Gigi Becali");
 
             IasiRentals.AddRental(new Rental(customer1, new MiniCar("Mini"), 3));
-            IasiRentals.AddRental(new Rental(customer2, new PremiumCar("Volvo"), 5));
-            IasiRentals.AddRental(new Rental(customer3, new LuxuryCar("BMW"), 1));
+            IasiRentals.AddRental(new Rental(customer2, new PremiumCar("Premium"), 5));
+            IasiRentals.AddRental(new Rental(customer2, new RegularCar("Regular"), 5));
+            IasiRentals.AddRental(new Rental(customer3, new LuxuryCar("Luxury"), 1));
             IasiRentals.CustomersReport();
 
             BucharestRentals.AddRental(new Rental(customer1, new MiniCar("Mini"), 3));
-            BucharestRentals.AddRental(new Rental(customer2, new PremiumCar("Volvo"), 5));
-            BucharestRentals.AddRental(new Rental(customer3, new LuxuryCar("BMW"), 1));
+            BucharestRentals.AddRental(new Rental(customer1, new MiniCar("Mini"), 3));
+            BucharestRentals.AddRental(new Rental(customer3, new PremiumCar("Premium"), 5));
+            BucharestRentals.AddRental(new Rental(customer3, new LuxuryCar("Luxury"), 1));
             BucharestRentals.CustomersReport();
 
-
+            RentalCars.CarsCategoryRevenueReport();
 
         }
     }

@@ -13,6 +13,14 @@ namespace RentalCarsRefactored
 
         private readonly List<Rental> _Rentals = new List<Rental>();
 
+        public static Dictionary<string, double> RevenuePerCategory = new Dictionary<string, double>()
+        {
+            {"Regular", 0 },
+            {"Mini", 0 },
+            {"Premium", 0 },
+            {"Luxury", 0 }
+        };
+
         public RentalCars(string name, double priceMultiplier)
         {
             Name = name;
@@ -28,7 +36,7 @@ namespace RentalCarsRefactored
         public void CustomersReport()
         {
             double totalRevenue = 0;
-            Console.WriteLine($"Rental Records for {Name}\n");
+            Console.WriteLine($"Rental Records for {Name}");
             Console.WriteLine("------------------------------");
 
             foreach (var rental in _Rentals)
@@ -40,9 +48,15 @@ namespace RentalCarsRefactored
             Console.WriteLine($"Total Revenue {totalRevenue} EUR\n");
         }
 
-        public void CarsCategoryRevenueReport()
+        public static void CarsCategoryRevenueReport()
         {
-
+            Console.WriteLine("Revenue by Car Category");
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Category\tTotal Income");
+            foreach(KeyValuePair<string, double> keyValuePair in RevenuePerCategory)
+            {
+                Console.WriteLine($"{keyValuePair.Key}\t\t{keyValuePair.Value} EUR");
+            }
         }
 
     }
